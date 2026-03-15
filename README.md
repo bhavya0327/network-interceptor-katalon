@@ -24,3 +24,38 @@ The script uses `Augmenter` to bypass Katalon's driver wrappers:
 ```groovy
 WebDriver augmentedDriver = new Augmenter().augment(driver)
 DevTools devTools = ((HasDevTools) augmentedDriver).getDevTools()
+
+
+
+
+
+
+🔧 Setup & Configuration
+Clone this repository into your Katalon Studio workspace.
+
+Open the Test Case: Test Cases/CaptureNetworkResponse.
+
+Update the CONFIGURATION block in the Script view:
+
+targetWebUrl: The URL of your application.
+
+apiUrlContains: A unique string found in the target API URL.
+
+triggerButtonTestObjectId: The object to click.
+
+
+
+📝 Example Output
+When successful, the Katalon Console will display:
+=============================================
+SUCCESS! FULL RAW API RESPONSE:
+{
+    "addressId": "106228516400064",
+    "fullAddress": "272 GREAT EGRET WAY BEAUFORT NC",
+    "postalCode": "28516"
+}
+=============================================
+EXTRACTED FIELDS:
+addressId: 106228516400064
+fullAddress: 272 GREAT EGRET WAY BEAUFORT NC
+=============================================
